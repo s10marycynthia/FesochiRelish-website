@@ -1,0 +1,98 @@
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#b54f2b;       /* terracotta/gold-ish */
+  --accent:#ffd9b3;
+  --dark:#222;
+  --muted:#666;
+  --bg:#fffaf7;
+  --glass: rgba(0,0,0,0.35);
+}
+
+/* Page */
+body{
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Layout helpers */
+.container{max-width:1100px;margin:40px auto;padding:0 16px}
+
+/* Header / nav */
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:white;box-shadow:0 2px 6px rgba(0,0,0,0.06);
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{height:56px;width:auto;border-radius:8px;object-fit:contain}
+.brand-text h1{font-size:1.1rem;color:var(--brand);margin-bottom:2px}
+.brand-text small{font-size:.75rem;color:var(--muted)}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:var(--dark);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px}
+.nav a:hover{background:var(--accent)}
+#cart-btn{background:var(--brand);color:white;border:none;padding:8px 10px;border-radius:7px;cursor:pointer}
+
+/* HERO */
+.hero{
+  position:relative;height:60vh;min-height:360px;display:flex;align-items:center;justify-content:center;color:white;
+  background-image: url('images/hero.jpeg');
+  background-size:cover;background-position:center;
+}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35),rgba(0,0,0,0.45))}
+.hero-content{position:relative;text-align:center;padding:0 16px;max-width:900px}
+.hero-content h2{font-size:2.8rem;letter-spacing:0.5px;margin-bottom:8px}
+.hero-content p{font-size:1.05rem;margin-bottom:18px;color:rgba(255,255,255,0.92)}
+.cta{display:inline-block;background:var(--accent);color:var(--dark);padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700}
+.cta:hover{filter:brightness(.95)}
+
+/* ABOUT */
+.about h2{font-size:1.6rem;margin-bottom:12px}
+.muted{color:var(--muted)}
+
+/* GALLERY / MENU */
+.menu h2{font-size:1.6rem;margin-bottom:18px;text-align:center}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
+  align-items:stretch;
+}
+.card{
+  background:white;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.06);cursor:pointer;display:flex;flex-direction:column;
+}
+.card img{width:100%;height:160px;object-fit:cover}
+.card .card-body{padding:10px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:1rem;color:var(--brand);margin-bottom:4px}
+.card p{font-size:.9rem;color:var(--muted)}
+.card .actions{margin-top:auto;display:flex;gap:10px;align-items:center}
+.card button{flex:1;padding:8px;border-radius:8px;border:none;background:var(--brand);color:white;cursor:pointer}
+.card .secondary{background:transparent;border:1px solid #eee;color:var(--brand)}
+
+/* FOOTER */
+.site-footer{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:var(--dark);color:white}
+.site-footer button{background:transparent;border:1px solid rgba(255,255,255,0.12);color:white;padding:8px 10px;border-radius:6px;cursor:pointer}
+
+/* MODAL */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.5);z-index:60}
+.modal.hidden{display:none}
+.modal-inner{background:white;border-radius:12px;max-width:820px;width:96%;overflow:hidden;display:flex;gap:0;box-shadow:0 30px 80px rgba(0,0,0,0.45)}
+.modal-photo{width:45%;object-fit:cover;height:100%}
+.modal-body{padding:18px;flex:1}
+.modal-close{position:absolute;right:18px;top:12px;background:transparent;border:none;font-size:20px;cursor:pointer}
+
+/* Form */
+#order-form label{display:block;margin-bottom:8px;font-size:.9rem}
+#order-form input,#order-form textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #e5e5e5;margin-top:6px}
+.form-actions{display:flex;gap:12px;margin-top:12px}
+.btn{padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+.primary{background:var(--brand);color:white}
+
+/* Responsive */
+@media (max-width:800px){
+  .hero-content h2{font-size:2rem}
+  .modal-inner{flex-direction:column}
+  .modal-photo{width:100%;height:200px}
+}

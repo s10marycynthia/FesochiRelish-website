@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FesochiRelish — Catering</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="images/relish.png" alt="FesochiRelish logo" class="logo" />
+      <div class="brand-text">
+        <h1>FesochiRelish</h1>
+        <small>Upscale Catering</small>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="cart-btn" title="Cart">Cart (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2>FesochiRelish</h2>
+      <p>Delicious catering for weddings, corporate events and special moments.</p>
+      <a class="cta" href="#menu">See Menu</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container about">
+    <h2>About Us</h2>
+    <p class="muted">
+      FesochiRelish provides tasteful, professional catering services. This demo is a portfolio-quality site showcasing frontend, UX and simple ordering flow (mock).
+    </p>
+  </section>
+
+  <!-- MENU / GALLERY -->
+  <section id="menu" class="container menu">
+    <h2>Our Signature Dishes</h2>
+
+    <div class="gallery" id="gallery">
+      <!-- Images are injected by script.js using the filenames list -->
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container contact">
+    <h2>Contact & Booking</h2>
+    <p class="muted">Phone: +234-xxx-xxx-xxxx — Email: contact@fesochirelish.com</p>
+    <p>Note: ordering here is simulated for portfolio. Full production mode will use backend + payments.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div>© <span id="year"></span> FesochiRelish. All rights reserved.</div>
+    <div class="footer-actions">
+      <button id="download-log">Download Orders Log</button>
+    </div>
+  </footer>
+
+  <!-- ORDER MODAL -->
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-inner">
+      <button id="modal-close" class="modal-close" title="Close">✕</button>
+      <div class="modal-body">
+        <img id="modal-photo" src="" alt="" class="modal-photo" />
+        <h3 id="modal-title">Dish</h3>
+        <p id="modal-price" class="muted">Price: N/A</p>
+
+        <form id="order-form">
+          <label>
+            Your name
+            <input type="text" id="order-name" required placeholder="Jane Doe" />
+          </label>
+
+          <label>
+            Contact (phone or email)
+            <input type="text" id="order-contact" required placeholder="phone or email" />
+          </label>
+
+          <label>
+            Quantity
+            <input type="number" id="order-qty" value="1" min="1" required />
+          </label>
+
+          <label>
+            Notes (optional)
+            <textarea id="order-notes" placeholder="Any special requests..."></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Place Order (mock)</button>
+            <button type="button" id="add-cart" class="btn">Add to Cart</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

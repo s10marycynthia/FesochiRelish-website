@@ -1,0 +1,15 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node, editors
+.vscode/
+*.log
+
+# local files you don't want
+*.pem
+.env
+node_modules/
+
+# Mac metadata
+.AppleDouble
