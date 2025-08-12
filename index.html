@@ -1,111 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FesochiRelish — Catering</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FesochiRelish Catering</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #ff6600;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 50px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('assets/images/hero.jpeg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="images/relish.png" alt="FesochiRelish logo" class="logo" />
-      <div class="brand-text">
-        <h1>FesochiRelish</h1>
-        <small>Upscale Catering</small>
-      </div>
-    </div>
 
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <button id="cart-btn" title="Cart">Cart (<span id="cart-count">0</span>)</button>
+<header>
+    <img src="assets/images/relish.png" alt="FesochiRelish Logo">
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </nav>
-  </header>
+</header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h2>FesochiRelish</h2>
-      <p>Delicious catering for weddings, corporate events and special moments.</p>
-      <a class="cta" href="#menu">See Menu</a>
-    </div>
-  </section>
+<section id="home" class="hero">
+    <h1>FesochiRelish</h1>
+    <p>Delicious catering for weddings, corporate events, and special moments.</p>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="container about">
-    <h2>About Us</h2>
-    <p class="muted">
-      FesochiRelish provides tasteful, professional catering services. This demo is a portfolio-quality site showcasing frontend, UX and simple ordering flow (mock).
-    </p>
-  </section>
-
-  <!-- MENU / GALLERY -->
-  <section id="menu" class="container menu">
+<section id="menu" class="section">
     <h2>Our Signature Dishes</h2>
-
-    <div class="gallery" id="gallery">
-      <!-- Images are injected by script.js using the filenames list -->
+    <div class="menu-grid">
+        <div class="menu-item"><img src="assets/images/eg.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/egu.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/egus.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/egusi.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/so.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/sou.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/soup.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/chi.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/chid.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/chidi.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/chidim.jpeg" alt="Dish"></div>
+        <div class="menu-item"><img src="assets/images/chidima.jpeg" alt="Dish"></div>
     </div>
-  </section>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="container contact">
+<section id="about" class="section" style="background-color: #f9f9f9;">
+    <h2>About Us</h2>
+    <p>FesochiRelish provides tasteful, professional catering services. This demo is a portfolio-quality site showcasing frontend, UX, and simple ordering flow (mock).</p>
+</section>
+
+<section id="contact" class="section">
     <h2>Contact & Booking</h2>
-    <p class="muted">Phone: +234-xxx-xxx-xxxx — Email: contact@fesochirelish.com</p>
-    <p>Note: ordering here is simulated for portfolio. Full production mode will use backend + payments.</p>
-  </section>
+    <p>Phone: +234-xxx-xxx-xxxx — Email: contact@fesochirelish.com</p>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div>© <span id="year"></span> FesochiRelish. All rights reserved.</div>
-    <div class="footer-actions">
-      <button id="download-log">Download Orders Log</button>
-    </div>
-  </footer>
+<footer>
+    <p>© FesochiRelish. All rights reserved.</p>
+</footer>
 
-  <!-- ORDER MODAL -->
-  <div id="modal" class="modal hidden" aria-hidden="true">
-    <div class="modal-inner">
-      <button id="modal-close" class="modal-close" title="Close">✕</button>
-      <div class="modal-body">
-        <img id="modal-photo" src="" alt="" class="modal-photo" />
-        <h3 id="modal-title">Dish</h3>
-        <p id="modal-price" class="muted">Price: N/A</p>
-
-        <form id="order-form">
-          <label>
-            Your name
-            <input type="text" id="order-name" required placeholder="Jane Doe" />
-          </label>
-
-          <label>
-            Contact (phone or email)
-            <input type="text" id="order-contact" required placeholder="08134798365" />
-          </label>
-
-          <label>
-            Quantity
-            <input type="number" id="order-qty" value="1" min="1" required />
-          </label>
-
-          <label>
-            Notes (optional)
-            <textarea id="order-notes" placeholder="Any special requests..."></textarea>
-          </label>
-
-          <div class="form-actions">
-            <button type="submit" class="btn primary">Place Order (mock)</button>
-            <button type="button" id="add-cart" class="btn">Add to Cart</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
